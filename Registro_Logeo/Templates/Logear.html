@@ -1,0 +1,36 @@
+{% extends 'Template_Generic/Padre.html' %}
+
+{% block title %} Logear {% endblock %}
+
+
+
+{% block content %}
+
+{% if messages %}
+
+ {% for mensaje in messages %}
+ <p style="text-align: center; color: red">{{mensaje}}</p>
+
+{% endfor %}
+
+ {% endif %}
+
+
+
+
+
+
+<form class="Formu" method="POST" action="{% url 'Logear' %}" >{%csrf_token %}
+<p><div id="centrar">
+
+  <div class="requisitos_formu"> username: {{form.username}}</div>
+
+  <div class="requisitos_formu">password:{{form.password}}</div>
+  
+<button  class="requisitos_formu">Entrar</button>
+<a href="{% url 'Registro' %}" style="text-align: right;">Registrarse</a>
+
+</div></p>
+</form>
+
+ {% endblock %}

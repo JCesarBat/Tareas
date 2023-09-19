@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'Visor_Tareas/estilos_visor.css' %}">
+	<meta chars et="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Visor</title>
+</head>
+<body >
+ 		<header id="cabeza">
+ 			<h1 id="Titulo">{{Title}}</h1>
+
+
+ 			<a href="{% url 'Crear' %}">Crear Tarea</a>
+ 			<div>
+ 				<a  id='derecha' href="{% url 'Desconectar' %}">Cerrar Sessoion</a>
+ 				<p>Bienvenido {{request.user.username}}</p>
+
+ 			</div>
+
+
+
+
+ 		</header>
+ 		<div id="padre">
+ 			
+ 				
+ 			
+ 			<aside id="contenido_Izquierdo">
+ 				<ul class="Lista">
+ 				<li class="lista_adentro"><a href="{% url 'Visor' %}">Todos</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 1 %}">Enero</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 2 %}">Febrero</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 3 %}">Marzo</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 4 %}">Abril</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 5 %}">Mayo</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 6 %}">Junio</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 7 %}">Julio</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 8 %}">Agosto</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 9 %}">Septiembre</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 10 %}">Octubre</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 11 %}">Nobiembre</a></li>
+ 				<li class="lista_adentro"><a href="{% url 'Visor_Mes' 12 %}">Diciembre</a></li>
+ 			</ul>
+ 			</aside>
+ 			<article id="centro">
+ 				{% for i in tareas %}
+ 				
+ 				<div id="Tareas_mias" >
+ 					<img id="Tareas" src="{{i.tipo.imagen.url}}" width=40 height="30">
+ 					<p id="imgn" class="Tareas">dia :{{i.fecha_Final.day}}</p>
+ 					<p class="Tareas">Titulo :{{i.titulo}} </p>
+ 					<p class="Tareas">Accion :{{i.contenido}}</p>
+ 					<p class="Tareas">Hora :{{i.hora}} </p>
+ 					<p class="Tareas">Mes :{{i.fecha_Final.month}} </p>
+ 				</div>
+ 				{% endfor %}
+ 			</article>
+ 			<div class="clearfloat"></div>
+ 		</div>
+</body>
+</html>

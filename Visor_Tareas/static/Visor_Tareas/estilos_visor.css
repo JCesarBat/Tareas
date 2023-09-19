@@ -1,0 +1,86 @@
+#cabeza{
+	
+	height: 150px;
+	border-radius: 20px;
+	border-bottom-style: solid;
+	margin-bottom:10px ;
+	box-shadow:hsl(0, 0%, 0%) 5px 5px 5px;
+}
+#Titulo{
+	font-style: italic;
+	font-size: 300%;
+
+}
+
+#padre{position: absolute;
+		
+		width: 97vw}
+
+#contenido_Izquierdo{
+
+	text-align: center;
+	width: 13vw;
+	height: 83vh;
+	float: left;
+	border-radius: 20px;
+
+	
+}
+
+.Lista{font-style: oblique;
+		font-family: sans-serif;
+		}
+.lista_adentro{
+	padding-bottom: 10px;
+	border-top-style: solid;
+	height: 30px;
+	border-radius: 10px;
+	box-shadow:hsl(0, 0%, 0%) 5px 5px 5px;
+}
+#centro{
+	border-radius: 20px;
+	
+	height: 83vh;
+	width: 80vw;
+
+	float: left;
+	
+}
+#Tareas_mias{
+	
+	height: 33px;
+}
+.Tareas{
+	border-right: solid;
+	font-size: 20px;
+	display: inline;
+	padding-left: 15px;
+	padding-right: 30px;
+	
+}
+#imgn{  
+			
+       animation-name: animacion-cabeza;
+       animation-duration: 2s;
+       animation-iteration-count: infinite;
+       animation-delay: 0s;
+       animation-direction: reverse;
+			
+	        }
+
+@keyframes animacion-cabeza{
+	0%{
+		transform: scale(0.5);
+
+	}
+	100%{
+		transform: scale(1.0);
+	}
+
+}
+
+#derecha{
+	float: right;
+}
+
+.clearfloat{ clear:both;}

@@ -1,0 +1,38 @@
+{% extends 'Template_Generic/Padre.html' %}
+
+{% block title %} Registro {% endblock %}
+
+
+
+{% block content %}
+
+{% if messages %}
+
+ {% for mensaje in messages %}
+ <p style="text-align: center; color: red">{{mensaje}}</p>
+
+{% endfor %}
+
+ {% endif %}
+
+
+
+
+
+
+<form class="Formu" method="POST" action="{% url 'Registro' %}" >{%csrf_token %}
+<p><div id="centrar">
+
+  <div class="requisitos_formu"> username: {{form.username}}</div>
+
+  <div class="requisitos_formu">password:{{form.password1}}</div>
+
+	<div class="requisitos_formu">password_confirm:{{form.password2}}</div>
+
+<button  class="requisitos_formu">Enviar</button>
+<a href="{% url 'Logear' %}" style="text-align: right;">Entrar</a>
+
+</div></p>
+</form>
+
+ {% endblock %}

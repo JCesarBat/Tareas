@@ -1,0 +1,36 @@
+{% extends 'Template_Generic/Padre1.html' %}
+
+{% block title %} Crear {% endblock %}
+
+
+
+{% block content %}
+
+
+
+
+<form class="Formu" method="POST" action="{% url 'Crear' %}" >{%csrf_token %}
+<p><div id="centrar">
+
+  <div class="requisitos_formu">Titulo:{{form.titulo}}</div>
+
+  <div class="requisitos_formu">Contenido:{{form.contenido}}</div>
+
+   <p class="requisitos_formu">  <label>Fecha:<input type="date" name="fecha" > </input></label></p>
+
+   <p class="requisitos_formu">  <label>Hora:<input type="Time" name="Time" > </input></label></p>
+   
+   <div>
+   {% for i in Tipo %}
+   <div class="inline"><input type="radio" name="radio_buton" value={{i.id}}>{{i.Titulo}}</div>
+
+   {% endfor %} 
+ </div>
+  
+<button  class="requisitos_formu"  id='boton'>Crear</button>
+
+
+</div></p>
+</form>
+
+ {% endblock %}
